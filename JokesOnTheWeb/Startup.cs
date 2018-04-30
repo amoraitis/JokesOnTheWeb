@@ -39,6 +39,9 @@ namespace JokesOnTheWeb
 
             app.UseStaticFiles();
 
+            app.UseOoui();
+
+            Xamarin.Forms.Forms.Init();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

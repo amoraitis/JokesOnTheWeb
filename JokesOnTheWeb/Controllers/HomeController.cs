@@ -5,6 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using JokesOnTheWeb.Models;
+using Ooui.AspNetCore;
+using Xamarin.Forms;
 
 namespace JokesOnTheWeb.Controllers
 {
@@ -12,7 +14,9 @@ namespace JokesOnTheWeb.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            var page = new Pages.MainPage();
+            var element = page.GetOouiElement();
+            return new ElementResult(element, "Hello from XAML!");
         }
 
         public IActionResult About()
